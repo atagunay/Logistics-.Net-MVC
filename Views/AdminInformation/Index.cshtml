@@ -1,0 +1,70 @@
+﻿
+
+@using Entity.Concrete
+@model List<Information>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<br />
+
+
+
+<table id="tbl1" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Vessel</th>
+            <th>Travel Code</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>ArrivalDate</th>
+            <th>Truck</th>
+            <th>Trailer</th>
+            <th>Driver</th>
+            <th>B/L</th>
+            <th>Delete</th>
+            <th>Update</th>
+
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.InformationID</th>
+            <td>@item.InformationDate</td>
+            <td>@item.InformationVessel</td>
+            <td>@item.InformationTravelCode</td>
+            <td>@item.InformationDeparture</td>
+            <td>@item.InformationArrivals</td>
+            <td>@item.InformationArrivalDate</td>
+            <td>@item.InformationTruck</td>
+            <td>@item.InformationTrailer</td>
+            <td>@item.InformationDriver</td>
+            <td>@item.InformationBL</td>
+            <td><a href="/AdminInformation/DeleteInformation/@item.InformationID" class="btn btn-danger">Delete</a></td>
+            <td><a href="#" class="btn btn-warning">Update</a></td>
+
+        </tr>
+    }
+
+</table>
+
+<a href="/AdminInformation/RefreshInformations" class="btn btn-danger">Refresh</a>
+
+
+<script>
+    $('#tbl1').dataTable();
+</script>

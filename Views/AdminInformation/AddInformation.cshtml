@@ -1,0 +1,65 @@
+﻿@model Entity.Concrete.Information
+
+@{
+    ViewBag.Title = "AddInformation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@* Razer Syntax kullanılmıştır. Böylelikle validasyon işlemleri yapılmıştır *@
+<h1> ADD INFORMATION</h1>
+
+@using (Html.BeginForm("AddInformation", "AdminInformation", FormMethod.Post))
+{
+<div class="form-group">
+
+    @Html.Label("Date")
+    @Html.TextBoxFor(x => x.InformationDate, new { @class = "form-control", style = "width: 20%" })
+    @Html.ValidationMessageFor(x => x.InformationDate)
+    <br />
+
+    @Html.Label("Vessel")
+    @Html.TextBoxFor(x => x.InformationVessel, new { @class = "form-control", style = "width: 20%" })
+    @Html.ValidationMessageFor(x => x.InformationVessel)
+    <br />
+
+    @Html.Label("Travel Code")
+    @Html.TextBoxFor(x => x.InformationTravelCode, new { @class = "form-control", style = "width: 20%" })
+    @Html.ValidationMessageFor(x => x.InformationTravelCode)
+    <br />
+
+    @Html.Label("Departure")
+    @Html.TextBoxFor(x => x.InformationDeparture, new { @class = "form-control", style = "width: 20%" })
+    @Html.ValidationMessageFor(x => x.InformationDeparture)
+    <br />
+
+    @Html.Label("Arrival")
+    @Html.TextBoxFor(x => x.InformationArrivals, new { @class = "form-control", style = "width: 20%" })
+    @Html.ValidationMessageFor(x => x.InformationArrivals)
+    <br />
+
+    @Html.Label("Arrival Date")
+    @Html.TextBoxFor(x => x.InformationArrivalDate, new { @class = "form-control", style = "width: 20%" })
+    @Html.ValidationMessageFor(x => x.InformationArrivalDate)
+    <br />
+
+    @Html.Label("Trailer")
+    @Html.TextBoxFor(x => x.InformationTrailer, new { @class = "form-control", style = "width: 20%" })
+    @Html.ValidationMessageFor(x => x.InformationTrailer)
+    <br />
+
+    @Html.Label("Driver")
+    @Html.TextBoxFor(x => x.InformationDriver, new { @class = "form-control", style = "width: 20%" })
+    @Html.ValidationMessageFor(x => x.InformationDriver)
+    <br />
+
+    @Html.Label("B/L")
+    @Html.TextBoxFor(x => x.InformationBL, new { @class = "form-control", style = "width: 20%" })
+    @Html.ValidationMessageFor(x => x.InformationBL)
+
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+
+</div>
+}
